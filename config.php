@@ -1,14 +1,15 @@
 <?php
-    $host = "localhost";
-    $userName = "";
-    $password = "";
-    $dbName = "pratica_form_db";
+/**
+ * Configuration for database connection
+ *
+ */
 
-    // Create database connection
-    $conn = new mysqli($host, $userName, $password, $dbName);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+$host       = "localhost";
+$username   = "root";
+$password   = "";
+$dbname     = "pratica_form_test";
+$dsn        = "mysql:host=$host;dbname=$dbname";
+$options    = array(
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+              );
 ?>
