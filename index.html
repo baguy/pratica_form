@@ -20,7 +20,6 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
           <![endif]-->
 
-          <!-- jogar em arquivo CSS depois - classe margin-button15 -->
           <style type="text/css">
               .margin-button15 {margin-bottom: 15px;}
           </style>
@@ -30,10 +29,10 @@
       <div class="container">
         <h1>Formulário</h1>
 
-          <form>
+          <form name="simple-form" action="" method="post" id="simple-form">
             <div class="form-group">
               <label for="label_nome">Nome</label>
-              <input type="nome" class="form-control" id="label_nome" aria-describedby="nome" placeholder="Insira seu nome">
+              <input type="nome" name="name" class="form-control" id="label_nome" aria-describedby="nome" placeholder="Insira seu nome">
             </div>
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="radio_fem" id="feminino" value="1">
@@ -46,7 +45,7 @@
             <div class="form-row">
               <div class="col-7">
                   <label for="label_email">Email</label>
-                  <input type="email" class="form-control" id="label_email" aria-describedby="emailHelp" placeholder="Insira seu email">
+                  <input type="email" name="email" class="form-control" id="label_email" aria-describedby="emailHelp" placeholder="Insira seu email">
               </div>
               <div class="col">
                   <label for="tipo_doc">Tipo de documento</label>
@@ -59,12 +58,12 @@
             </div>
             <div class="form-group">
               <label for="label_doc">Documento</label>
-              <input type="dodumento" class="form-control" id="label_doc" placeholder="Documento">
+              <input type="documento" name="doc" class="form-control" id="label_doc" placeholder="Documento">
             </div>
-            <div class="form-check">
+            <!-- <div class="form-check">
               <input type="checkbox" class="form-check-input" id="sem_doc">
               <label class="form-check-label" for="sem_doc">Não tem documento</label>
-            </div>
+            </div> -->
 
             <button type="submit" class="btn btn-primary">Submit</button>
             <!-- <a href="<?php echo base_url('adicionar') ?>" class="btn btn-success margin-button15">Adicionar</a> -->
