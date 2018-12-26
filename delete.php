@@ -1,13 +1,31 @@
 <?php
 
 /**
- * List all users with a link to edit
+ * Delete a user
  */
 
-try {
-  require "config.php";
-  require "common.php";
+require "config.php";
+require "common.php";
 
+if (isset($_GET["id"])) {
+  try {
+    $connection = new PDO($dsn, $username, $password, $options);
+
+    $id = $_GET["id"];
+
+    $sql = "DELETE FROM users WHERE id = :id";
+
+    $statement = $connection->prepare($sql);
+    $statement->bindValue(':id', $id);
+    $statement->execute();
+
+    $success = "Usuário excluído";
+  } catch(PDOException $error) {
+    echo $sql . "<br>" . $error->getMessage();
+  }
+}
+
+try {
   $connection = new PDO($dsn, $username, $password, $options);
 
   $sql = "SELECT * FROM users";
@@ -16,15 +34,15 @@ try {
   $statement->execute();
 
   $result = $statement->fetchAll();
-
 } catch(PDOException $error) {
   echo $sql . "<br>" . $error->getMessage();
 }
 ?>
-
 <?php require "template/header.php"; ?>
 
-<h2><i class="fas fa-edit"></i>Atualizar usuários</h2>
+<h2>Delete users</h2>
+
+<?php if ($success) echo $success; ?>
 
 <table class="table">
   <thead>

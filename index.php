@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
 <?php require "template/header.php"; ?>
 
 <?php if (isset($_POST['submit']) && $statement) { ?>
-    <blockquote><?php echo $_POST['name']; ?> adicionado com sucesso.</blockquote>
+    <blockquote><?php echo $_POST['name']; ?> adicionado(a) com sucesso.</blockquote>
 <?php } ?>
 
 <div class="form-group">
@@ -87,8 +87,6 @@ if (isset($_POST['submit'])) {
             </div> -->
 
             <button type="submit" class="btn btn-primary" name="submit" value="Submit" id="submit_form">Enviar</button>
-
-            <?php var_dump($_POST); ?>
 
           </form>
 
