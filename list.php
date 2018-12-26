@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
         $sql = "SELECT *
                         FROM users";
         $statement = $connection->prepare($sql);
-        $statement->bindParam(':location', $location, PDO::PARAM_STR);
+        // $statement->bindParam(':location', $location, PDO::PARAM_STR);
         $statement->execute();
         $result = $statement->fetchAll();
     } catch(PDOException $error) {
